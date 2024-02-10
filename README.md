@@ -1,3 +1,3 @@
 # reactTest
-just contains silly react practices
-Created with CodeSandbox
+just contains silly react projects for practice
+
