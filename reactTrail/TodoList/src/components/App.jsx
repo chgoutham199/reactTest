@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Dot from "./list";
 
 function App() {
   const [item, setItem] = useState("");
@@ -9,6 +10,9 @@ function App() {
   }
   function addListItem() {
     setList([...list, item]);
+  }
+  function DeleteItem(id) {
+    setList(list.filter((item, index) => index !== id));
   }
   return (
     <div className="container">
@@ -23,8 +27,8 @@ function App() {
       </div>
       <div>
         <ul>
-          {list.map((item) => (
-            <li>{item}</li>
+          {list.map((item, index) => (
+            <Dot key={index} id={index} items={item} onTouch={DeleteItem} />
           ))}
         </ul>
       </div>
